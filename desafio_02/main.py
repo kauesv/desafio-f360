@@ -1,11 +1,9 @@
-import requests
-from dotenv import load_dotenv
 import os
 import json
 import logging
 from datetime import datetime
 import sys
-from api import obtem_dados_openweathermap, obtem_dados_weatherstack
+import pandas as pd
 
 
 # ----------------
@@ -69,7 +67,7 @@ for coord in data:
 #print(list_result)
 
 # ----------------
-#   Resultado weatherstack
+# Resultado weatherstack
 logging.info(f"Executando Weatherstack")
 try:
     result = obtem_dados_weatherstack("Sao Paulo", api_key_weatherstack)

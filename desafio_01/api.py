@@ -3,18 +3,34 @@ import requests
 import logging
 
 
+# ----------------
 # Configurando o cache com um Time-To-Live (TTL) de 600 segundos (10 minutos)
 cache = TTLCache(maxsize=100, ttl=600)
 
+# ----------------
 # Visualizando o cache
 # for key, value in cache.items():
 #     print(f"{key}: {value}")
 
-# ----------------
-# 
+
 @cached(cache)
-def obtem_dados_openweathermap(nome, lat, long, api_key):
-    """"""
+def obtem_dados_openweathermap(nome: str, lat: float, long: float, api_key: str):
+    """Obtem dados da API openweathermap
+    
+    Args:
+        nome (str): nome da coordenada
+        lat (float): Latitude da coordenada
+        long (float): longitude da coordenada
+        api_key (str): API Key do openweathermap
+    
+    Returns:
+        Json{str, float, float, int, str}:
+            - local (str): nome do local da coordenada,
+            - temperatura_kelvin (float): temperatura em kelvin,
+            - temperatura_celsius (float): temperatura em celsius,
+            - umidade (int): umidade no ar na região,
+            - condicoes_do_tempo (str): nome da condição do tempo
+    """
     try:
         url = f"https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={long}&appid={api_key}&lang=pt_br"
 
@@ -46,8 +62,20 @@ def obtem_dados_openweathermap(nome, lat, long, api_key):
 # ----------------
 # 
 @cached(cache)
-def obtem_dados_weatherstack(cidade, api_key):
-    """"""
+def obtem_dados_weatherstack(cidade: str, api_key: str):
+    """Obtem dados da API weatherstack
+    
+    Args:
+        cidade (str): nome da cidade
+        api_key (str): API Key do openweathermap
+    
+    Returns:
+        Json{str, int, int, str}:
+            - cidade (str): nome da cidade,
+            - temperatura (int): temperatura em celsius,
+            - umidade (int): umidade no ar na cidade,
+            - condicoes_do_tempo (str): nome da condição do tempo
+    """
     try:
         url = f"http://api.weatherstack.com/current?access_key={api_key}&query={cidade}"
 
