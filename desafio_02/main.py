@@ -15,7 +15,7 @@ dir_data_02 = r"B:\Meus Documentos\Documentos\projetos\desafio-f360\dados\desafi
 dir_log = r"B:\Meus Documentos\Documentos\projetos\desafio-f360\dados\logs"
 
 # ----------------
-#   Log do maestro
+#   Log
 agora = datetime.now()
 data_log = agora.strftime("%Y-%m-%d")
 arquivo_log_basename = nome_programa + '.' + data_log + '.log'

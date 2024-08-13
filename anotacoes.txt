@@ -4,3 +4,30 @@ Desafio 01:
             https://openweathermap.org/api/one-call-3
         Weatherstack:
             https://weatherstack.com/documentation
+
+    Não encontrei na documentação do OpenWeatherMap a passagem do parâmetro "cidade"
+
+
+Desafio 02:
+    Pandas
+
+
+Desafio 03:
+    - Criação da função
+    - Otimização
+    - Testes
+
+O que é complexidade temporal?
+Complexidade temporal refere-se ao tempo que um algoritmo leva para executar, geralmente em função do tamanho da entrada. Ela é frequentemente expressa em termos de notação Big-O, como 𝑂(1), 𝑂(𝑛), 𝑂(𝑛2) onde:
+
+O(1) significa tempo constante, ou seja, o tempo de execução não aumenta conforme o tamanho da entrada cresce.
+O(n) significa tempo linear, ou seja, o tempo de execução cresce proporcionalmente ao tamanho da entrada.
+O(n2) significa tempo quadrático, o que indica que o tempo de execução aumenta quadraticamente em relação ao tamanho da entrada.
+
+
+Entrega:
+● Forneça o código Python em um Jupyter Notebook.
+● O código deve estar bem documentado, explicando as decisões tomadas em cada etapa.
+● Inclua as visualizações geradas, insights extraídos, e os resultados dos testes unitários.
+● Deverá ser criado uma imagem de container para cada desafio
+● Realizar o desafio no GitHub

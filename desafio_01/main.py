@@ -14,11 +14,11 @@ nome_programa = os.path.basename(sys.argv[0])
 
 # ----------------
 #   Diretórios
-dir_data_01 = r"B:\Meus Documentos\Documentos\projetos\desafio-f360\dados\desafio_01"
-dir_log = r"B:\Meus Documentos\Documentos\projetos\desafio-f360\dados\logs"
+dir_data_01 = r"/dados"
+dir_log = r"/dados/logs"
 
 # ----------------
-#   Log do maestro
+#   Log
 agora = datetime.now()
 data_log = agora.strftime("%Y-%m-%d")
 arquivo_log_basename = nome_programa + '.' + data_log + '.log'
