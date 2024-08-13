@@ -22,8 +22,7 @@ def obtem_dados_openweathermap(nome, lat, long, api_key):
         response_json = response.json()
 
         if response.status_code != 200:
-            logging.error(f"Erro na chamada da API, retorno: {response.json()}")
-            return False
+            raise Exception(f"Erro na chamada da API, retorno: {response.json()}")
         else:
             logging.info(f"response returned successfully | status_code: {response.status_code}")
 
@@ -40,7 +39,8 @@ def obtem_dados_openweathermap(nome, lat, long, api_key):
             logging.info(f"returned data: {result}")
             return result
     except Exception as e:
-        logging.error(f"An error occurred: {e}")
+        logging.error(e)
+        raise
 
 
 # ----------------
@@ -54,8 +54,7 @@ def obtem_dados_weatherstack(cidade, api_key):
         response = requests.get(url=url)
         response_json = response.json()
 
-        if response.status_code != 200:
-            logging.error(f"Erro na chamada da API, retorno: {response.json()}")
+        if 'error' in response_json:
             raise Exception(f"Erro na chamada da API, retorno: {response.json()}")
         else:
             logging.info(f"response returned successfully | status_code: {response.status_code}")
@@ -69,4 +68,5 @@ def obtem_dados_weatherstack(cidade, api_key):
             logging.info(f"returned data: {result}")
             return result
     except Exception as e:
-        logging.error(f"An error occurred: {e}")
+        logging.error(e)
+        raise

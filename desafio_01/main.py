@@ -24,7 +24,7 @@ data_log = agora.strftime("%Y-%m-%d")
 arquivo_log_basename = nome_programa + '.' + data_log + '.log'
 arquivo_log = os.path.join(dir_log, arquivo_log_basename)
 file_handler = logging.FileHandler(arquivo_log, encoding='utf-8')
-file_handler.setFormatter(logging.Formatter('%(asctime)s(%(process)d) %(message)s'))
+file_handler.setFormatter(logging.Formatter('%(asctime)s(%(process)d)%(levelname)s %(message)s'))
 logging.basicConfig(level=logging.INFO, handlers=[file_handler])
 logging.info(f"Nome do programa: {nome_programa}")
 
@@ -48,9 +48,6 @@ except:
     logging.error("ERRO:", exc_info=True)
     raise
 
-#    ATENÇÃO TIRAR A LINHA 52 PARA EXECUTAR
-sys.exit(0)
-
 # ----------------
 #   Resultado openweathermap
 logging.info(f"Executando Openweathermap")
@@ -61,21 +58,21 @@ for coord in data:
     long = coord['long']
     logging.info(f"Coordenadas: {coord}")
 
-    result = obtem_dados_openweathermap(nome, lat, long, api_key_openweathermap)
-    if result:
+    try:
+        result = obtem_dados_openweathermap(nome, lat, long, api_key_openweathermap)
         print(json.dumps(result, indent=4, ensure_ascii=False))
+
         list_result.append(result)
-    else:
-        print('Houve algum erro no obtem_dados_openweathermap')
+    except:
+        print('Houve um erro no openweathermap')
 
 #print(list_result)
-
 
 # ----------------
 # Resultado weatherstack
 logging.info(f"Executando Weatherstack")
-result = obtem_dados_weatherstack("Sao Paulo", api_key_weatherstack)
-if result:
+try:
+    result = obtem_dados_weatherstack("Sao Paulo", api_key_weatherstack)
     print(json.dumps(result, indent=4, ensure_ascii=False))
-else:
-    print('Houve algum erro no obtem_dados_weatherstack')
+except:
+    print('Houve um erro no weatherstack')
