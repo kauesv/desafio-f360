@@ -1,0 +1,6 @@
+Desafio 01:
+    Documentações:
+        OpenWeatherMap:
+            https://openweathermap.org/api/one-call-3
+        Weatherstack:
+            https://weatherstack.com/documentation
