@@ -48,6 +48,7 @@ except:
     logging.error("ERRO:", exc_info=True)
     raise
 
+#    ATENÇÃO TIRAR A LINHA 52 PARA EXECUTAR
 sys.exit(0)
 
 # ----------------
