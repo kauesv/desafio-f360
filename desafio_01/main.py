@@ -76,7 +76,6 @@ for coord in data:
 logging.info(f"Executando Weatherstack")
 result = obtem_dados_weatherstack("Sao Paulo", api_key_weatherstack)
 if result:
-        print(json.dumps(result, indent=4, ensure_ascii=False))
-        list_result.append(result)
+    print(json.dumps(result, indent=4, ensure_ascii=False))
 else:
     print('Houve algum erro no obtem_dados_weatherstack')
