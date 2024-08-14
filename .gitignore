@@ -3,7 +3,7 @@ __pycache__/
 
 #env
 venv/
-*.env
+development.env
 
 #Testes
 .pytest_cache/

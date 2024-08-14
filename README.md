@@ -17,12 +17,16 @@ Aqui, você precisa desenvolver uma função para encontrar a maior soma de um s
 
 ## Passo a passo para rodar os desafios
 ### 1. Arquivo .env
-- Crie um arquivo .env na raiz do projeto com as seguintes informações:
+- Altere o arquivo .env que esta na raiz com suas APIs:
 ```
 APIKEY_1=SUA_CHAVE_API_DO_OPENWEATHERMAP
 APIKEY_2=SUA_CHAVE_API_DO_WEATHERSTACK
 ```
-### 2. Executar o compose
+
+### 2. Libere a execução dos containers
+- No arquivo docker-compose.yml os 3 desafios estão comentados, libere apenas os que você deseja executar
+
+### 3. Execute os containers
 - Execute o docker-compose:
     ```
     $  docker-compose up --build

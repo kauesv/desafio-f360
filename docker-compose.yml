@@ -2,24 +2,24 @@ version: '3.8'
 
 services:
   # desafio_01:
-  #   build: .
+  #   build:
   #     context: .
   #     dockerfile: desafio_01/Dockerfile
   #   container_name: desafio_01_container
 
-  desafio_02:
-    build:
-      context: .
-      dockerfile: desafio_02/Dockerfile
-    container_name: desafio_02_container
-    ports:
-      - "8888:8888"
-    # Guardar as alterações nos volumes
-    volumes:
-      - ./desafio_02:/desafio_02
-    # Habilita o jupyter Lab
-    environment:
-      - JUPYTER_ENABLE_LAB=yes
+  # desafio_02:
+  #   build:
+  #     context: .
+  #     dockerfile: desafio_02/Dockerfile
+  #   container_name: desafio_02_container
+  #   ports:
+  #     - "8888:8888"
+  #   # Guardar as alterações nos volumes
+  #   volumes:
+  #     - ./desafio_02:/desafio_02
+  #   # Habilita o jupyter Lab
+  #   environment:
+  #     - JUPYTER_ENABLE_LAB=yes
 
   # desafio_03:
   #   build:
