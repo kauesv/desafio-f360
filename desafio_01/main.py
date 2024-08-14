@@ -6,7 +6,7 @@ import logging
 from datetime import datetime
 import sys
 from api import obtem_dados_openweathermap, obtem_dados_weatherstack
-
+from time import sleep
 
 # ----------------
 #   
@@ -14,8 +14,8 @@ nome_programa = os.path.basename(sys.argv[0])
 
 # ----------------
 #   Diretórios
-dir_data_01 = r"/dados"
-dir_log = r"/dados/logs"
+dir_data_01 = r"dados"
+dir_log = r"dados/logs"
 
 # ----------------
 #   Log
@@ -60,6 +60,7 @@ for coord in data:
 
     try:
         result = obtem_dados_openweathermap(nome, lat, long, api_key_openweathermap)
+        print("Openweathermap")
         print(json.dumps(result, indent=4, ensure_ascii=False))
 
         list_result.append(result)
@@ -73,6 +74,9 @@ for coord in data:
 logging.info(f"Executando Weatherstack")
 try:
     result = obtem_dados_weatherstack("Sao Paulo", api_key_weatherstack)
+    print("Weatherstack")
     print(json.dumps(result, indent=4, ensure_ascii=False))
 except:
     print('Houve um erro no weatherstack')
+
+#sleep(6000)

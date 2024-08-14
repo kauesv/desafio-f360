@@ -1,8 +1,15 @@
-venv/
+#ide
 __pycache__/
 
+#env
+venv/
 *.env
+
+#Testes
+.pytest_cache/
+
+#Logs
 *.log
 
-*.yml
-Dockerfile
+#Docker
+.ipynb_checkpoints/

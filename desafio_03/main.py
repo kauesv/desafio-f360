@@ -3,6 +3,7 @@ Escreva uma função que receba uma lista de inteiros (representando valores de
 transações diárias) e retorne a maior soma de um subarray contínuo (subconjunto de
 transações).
 '''
+from time import sleep
 
 def maior_soma_subarray(lista):
     """Encontra a maior soma em um subarray"""
@@ -20,8 +21,8 @@ def maior_soma_subarray(lista):
     temp_inicial = 0
 
     for i in range(1, len(lista)):
-        print(i)
-        print(f"max_terminando_aqui: {max_terminando_aqui}")
+        #print(i)
+        #print(f"max_terminando_aqui: {max_terminando_aqui}")
 
         # Se a soma corrente for negativa, reinicia a soma e atualiza o índice inicial
         if max_terminando_aqui < 0:
@@ -30,7 +31,7 @@ def maior_soma_subarray(lista):
         else:
             max_terminando_aqui += lista[i]
 
-        print(f"max_terminando_aqui: {max_terminando_aqui}")
+        #print(f"max_terminando_aqui: {max_terminando_aqui}")
 
         # Atualiza o máximo encontrado até agora
         if max_terminando_aqui > maximo_ate_agora:
@@ -40,7 +41,7 @@ def maior_soma_subarray(lista):
             indice_inicial = temp_inicial
             indice_final = i
 
-        print(f"maximo_ate_agora: {maximo_ate_agora}")
+        #print(f"maximo_ate_agora: {maximo_ate_agora}")
 
         # se as somas ainda forem menor que zero, atualize para zero novamente,
         # para que o loop descarte os negativos
@@ -48,7 +49,9 @@ def maior_soma_subarray(lista):
         #     print('Zerou')
         #     max_terminando_aqui = 0
 
-    print('index_inicial', indice_inicial)
-    print('index_final', indice_final)
-    print(lista[indice_inicial:indice_final+1])
+    #print('index_inicial', indice_inicial)
+    #print('index_final', indice_final)
+    #print(lista[indice_inicial:indice_final+1])
     return lista[indice_inicial:indice_final+1], maximo_ate_agora
+
+#sleep(6000)

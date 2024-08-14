@@ -9,7 +9,15 @@ Desafio 01:
 
 
 Desafio 02:
-    Pandas
+    - Manipulação de Dados com Pandas
+        - Carregue os Dados
+        - Análise Inicial de Vendas
+        - Exportação de Resultados
+        - Bônus - Geração de Insights
+
+    - Análise de Dados e Visualização
+        - Análise por Cliente
+        - Visualização dos Dados
 
 
 Desafio 03:
