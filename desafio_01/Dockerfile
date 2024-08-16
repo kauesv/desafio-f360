@@ -16,8 +16,10 @@ ENV PYTHONUNBUFFERED=1
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Comando para rodar o desafio
-CMD ["python", "main.py"]
+# Comando para rodar o desafio e manter o container ativo
+# Nele estou executando um shell no container e passo o comando tail -f /dev/null para
+#impedir que o container seja finalizado
+CMD sh -c "python main.py && tail -f /dev/null"
 
 #CMD ["ls"]
 #docker exec -it 1d523f617eb4 /bin/sh

@@ -6,7 +6,7 @@ import logging
 from datetime import datetime
 import sys
 from api import obtem_dados_openweathermap, obtem_dados_weatherstack
-from time import sleep
+
 
 # ----------------
 #   
@@ -78,5 +78,3 @@ try:
     print(json.dumps(result, indent=4, ensure_ascii=False))
 except:
     print('Houve um erro no weatherstack')
-
-#sleep(6000)

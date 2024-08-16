@@ -12,5 +12,7 @@ ENV PYTHONUNBUFFERED=1
 # Instala as dependências
 RUN pip install -r requirements.txt
 
-# Comando para rodar o desafio
-CMD ["pytest", "testes.py"]
+# Comando para rodar o desafio e manter o container ativo
+# Nele estou executando um shell no container e passo o comando tail -f /dev/null para
+#impedir que o container seja finalizado
+CMD sh -c "pytest testes.py && tail -f /dev/null"
