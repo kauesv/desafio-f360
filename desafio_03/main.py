@@ -3,7 +3,6 @@ Escreva uma função que receba uma lista de inteiros (representando valores de
 transações diárias) e retorne a maior soma de um subarray contínuo (subconjunto de
 transações).
 '''
-from time import sleep
 
 def maior_soma_subarray(lista):
     """Encontra a maior soma em um subarray"""
@@ -53,5 +52,3 @@ def maior_soma_subarray(lista):
     #print('index_final', indice_final)
     #print(lista[indice_inicial:indice_final+1])
     return lista[indice_inicial:indice_final+1], maximo_ate_agora
-
-#sleep(6000)
