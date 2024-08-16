@@ -29,7 +29,7 @@ APIKEY_2=SUA_CHAVE_API_DO_WEATHERSTACK
 ### 3. Execute os containers
 - Execute o docker-compose:
     ```
-    $  docker-compose up --build
+    $  docker-compose up --build -d
     ```
 
 ## Contato
